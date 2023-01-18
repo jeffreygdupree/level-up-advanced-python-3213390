@@ -31,7 +31,6 @@ def get_event_time(line):
     age = get_age(event_dob)
     return (age, time)
 
-    
 def get_age_slowest_times():
     '''Return a tuple (age, race_time) where:
        age: AyBd is in this format where A and B are integers'''
