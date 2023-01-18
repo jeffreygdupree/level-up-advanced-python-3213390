@@ -13,6 +13,7 @@ def get_data():
 def get_rhines_times():
     """Return a list of Jennifer Rhines' race times"""
     races = get_data()
+    rhines_times = []
     def get_time(line):
         return re.findall(r'\d{2}:\S+', line)[0]
     
@@ -35,6 +36,6 @@ def get_average():
             total += datetime.timedelta(minutes=int(mins), seconds=int(secs), milliseconds=int(ms))
         except ValueError:
             mins, secs = re.split(r'[:.]', racetime)
-            total += datatime.timedelta(minutes=int(mins), seconds=int(secs))
+            total += datetime.timedelta(minutes=int(mins), seconds=int(secs))
     return f'{total / len(racetimes)}'[2:-5]
     
